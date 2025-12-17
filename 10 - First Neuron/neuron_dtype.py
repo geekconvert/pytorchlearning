@@ -16,7 +16,6 @@ X = torch.tensor([
     [100], 
     [150]
 ], dtype=torch.float32)
-
 model = nn.Linear(1, 1)
 
 # for the learning process, it's required that the tensor here for our bias and for our weight needs to be a floating point number.
