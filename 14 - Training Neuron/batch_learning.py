@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 
+# The idea with batch learning is that we want to evaluate both of these inputs at the same time, and compare it to the corresponding outputs.
 # Input: Temperature in °C
 X = torch.tensor([
     [10],
@@ -17,6 +18,9 @@ model = nn.Linear(1, 1)
 loss_fn = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.0001)
 
+# I can have my model applied to both entries at the same time. And I can then also have my loss applied to both entries at the same time.
+# Learning should be a little bit faster. We should usually be able to, for example, utilize GPUs better because we are running more computations at the same time, which increases the efficiency. So this is usually a good approach to always bundle multiple entries together.
+# it may happen that for the same number of digits after the decimal point we might need a few more iterations here. Because the overall number of steps that we do are still less than before.
 for i in range(0, 150000):
     # Training pass
     optimizer.zero_grad()
@@ -35,7 +39,10 @@ measurements = torch.tensor([
     [37.5]
 ], dtype=torch.float32)
 
+# This just means that I want to turn off features that might be specific for training because there might be some features that behave differently during training and during inference.
 model.eval()
+
+# And this with block just tells PyTorch and the optimizers there, um, that we don't need to keep track of the gradients because that's not needed if we have finished training and we just want our model to be to be applied so we can disable this to increase performance.
 with torch.no_grad():
     prediction = model(measurements)
     print(prediction)
