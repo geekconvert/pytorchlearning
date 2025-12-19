@@ -36,22 +36,34 @@ X = torch.column_stack([
     torch.tensor(age, dtype=torch.float32), 
     torch.tensor(milage, dtype=torch.float32)
 ])
+y = torch.tensor(price, dtype=torch.float32).reshape(-1, 1)
+
 model = nn.Linear(2, 1)
 loss_fn = torch.nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr = 0.0001)
+# optimizer = torch.optim.SGD(model.parameters(), lr = 0.0001)
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.0000000001)
+
+# We can see here that we are getting this Nan here. But we can also see here how these parameters here kind of explode. So probably these parameters here are just getting way too large and we are not really able to handle them anymore. And then either parameters, um, become too large that they can't be stored anymore. Or what can also happen is that we end up dividing by zero, because when we take the derivative or something and then this Nan happens.
+#The reason can be that our learning rate is too high. So we can try to reduce our learning rate here.
+for i in range(0, 1000):
+    #training pass
+    optimizer.zero_grad()
+    outputs = model(X)
+    loss = loss_fn(outputs, y)
+    loss.backward()
+    optimizer.step()
+
+    if i % 100 == 0: 
+        print(model.bias)
+        print(model.weight)
+        print(loss)
 
 prediction = model(X)
 print(prediction)
 
-# Torch: Creating X and y data (as tensors)
-# X = torch.column_stack([
-#     torch.tensor(age, dtype=torch.float32),
-#     torch.tensor(milage, dtype=torch.float32)
-# ])
+prediction = model(torch.tensor([[5.0, 10000.0]]))
+print(prediction)
 
-# model = nn.Linear(2, 1)
-# loss_fn = torch.nn.MSELoss()
-# optimizer = torch.optim.SGD(model.parameters(), lr = 0.0001)
-
-# prediction = model(X)
-# print(prediction)
+# currently output of this is greater than above one, which is not correct as price should decrease with increase in milage
+prediction = model(torch.tensor([[5.0, 20000.0]]))
+print(prediction)
