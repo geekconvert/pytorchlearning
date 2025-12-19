@@ -1,4 +1,3 @@
-import sys
 import pandas as pd
 import torch
 from torch import nn
@@ -25,17 +24,15 @@ X = torch.column_stack([
     torch.tensor(age, dtype=torch.float32),
     torch.tensor(milage, dtype=torch.float32)
 ])
+
 X_mean = X.mean(axis=0)
 X_std = X.std(axis=0)
-X = (X - X_mean) / X_std
+X = (X-X_mean)/X_std
 
-y = torch.tensor(price, dtype=torch.float32)\
-    .reshape((-1, 1))
+y = torch.tensor(price, dtype=torch.float32).reshape((-1, 1))
 y_mean = y.mean()
 y_std = y.std()
 y = (y - y_mean) / y_std
-# sys.exit()
-
 
 model = nn.Linear(2, 1)
 loss_fn = torch.nn.MSELoss()
@@ -51,9 +48,8 @@ for i in range(0, 10000):
 
     if i % 100 == 0: 
         print(loss)
-    # if i % 100 == 0: 
-    #    print(model.bias)
-    #    print(model.weight)
+        # print(model.bias)
+        # print(model.weight)
 
 
 X_data = torch.tensor([
