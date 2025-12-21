@@ -56,6 +56,7 @@ for i in range(0, 250):
     # if i % 100 == 0: 
     #    print(model.bias)
     #    print(model.weight)
+
 print(losses)
 plt.plot(losses)
 plt.show()
