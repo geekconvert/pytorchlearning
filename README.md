@@ -13,4 +13,12 @@
 
 # Using sigmoid and BCEWithLogitsLoss
 
+- Using we got a little bit of a challenge there when we are using the MSE loss.
+
+The problem is that the error there is just too small.
+
+And then the gradients become small as well.
+
+And then the neuron struggles to learn efficiently.
+
 ![sigmoid function](readmeimages/using_sigmoid.png)
