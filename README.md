@@ -10,3 +10,7 @@
 - function that can just map linear output to the range of 0 to 1.
 
 ![sigmoid function](readmeimages/sigmoid.png)
+
+# Using sigmoid and BCEWithLogitsLoss
+
+![sigmoid function](readmeimages/using_sigmoid.png)
