@@ -18,3 +18,27 @@
 - So we are applying the sigmoid so that we get probabilities to the neuron. And then with the BCE loss function, we are then kind of like undoing a little bit there so that we can still train properly,
 
 ![sigmoid function](readmeimages/using_sigmoid.png)
+
+# Evaluating model
+
+## Accuracy:
+
+- This would just answer the question for what percentage is the true value of our messages, whether they are spam or not. Spam exactly identical to the prediction predicted value.
+
+## sensitivity:
+
+- sensitivity or true positive rate: This is the proportion of actual spam messages that got correctly identified. gGiven that we got a spam message, what percentage did the model predict correctly.
+- It may be accurate in a sense that It detects a lot of things correctly, but for example, the sensitivity could be really low and in this case we would not actually filter many spam messages.
+- For example, let's say you got you get 1000 normal emails and one spam email. If you had a model that would always accept all the emails and never reject any emails, then the accuracy would be really high because we have 1000 messages that got correctly accepted and one spam message that just got accepted as well However, the sensitivity here would be extremely low. It would be zero here, because the proportion of actual spam messages that got correctly identified
+
+## specificity or the true negative rate:
+
+- This is the proportion of actual non-spam messages that got correctly identified. So given that we are not having a spam message, what percentage did the model predict correctly.
+- if you don't get an email from a potential customer and that would be a complaint, that could have serious consequences.
+
+## Prediction:
+
+- This stands for the proportion of predicted spam messages that are actually spam.
+- given that the that the prediction is spam, what percentage had been spam originally.
+
+![sigmoid function](readmeimages/evaluating_model.png)
