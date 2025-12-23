@@ -41,4 +41,11 @@
 - This stands for the proportion of predicted spam messages that are actually spam.
 - given that the that the prediction is spam, what percentage had been spam originally.
 
-![sigmoid function](readmeimages/evaluating_model.png)
+![evaluating model](readmeimages/evaluating_model.png)
+
+# Train / Validation / Test:
+
+- we got normal parameters here(like bias, weights etc) that our model has. These are learned here during training.
+- But there are hyper parameters that influence the structure of the model. For example for the countvectorizer how many features we got there, how many inputs we have here, what's the learning rate, how many training passes we got, where we do the cut off here when we consider something spam or not spam. So all of these things would be considered hyper parameters here.
+
+![evaluating model](readmeimages/training_validation_test.png)
