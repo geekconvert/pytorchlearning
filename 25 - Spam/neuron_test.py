@@ -18,6 +18,58 @@ messages_val = cv.transform(df_val["message"])
 X_train = torch.tensor(messages_train.todense(), dtype=torch.float32)
 Y_train = torch.tensor(df_train["spam"].values, dtype=torch.float32).reshape((-1, 1))
 
+X_val = torch.tensor(messages_val.todense(), dtype=torch.float32)
+Y_val = torch.tensor(df_val["spam"].values, dtype=torch.float32).reshape((-1, 1))
+
+model = nn.Linear(1000, 1)
+loss_fn = torch.nn.BCEWithLogitsLoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
+
+for i in range(0, 10000):
+    # Training pass
+    optimizer.zero_grad()
+    outputs = model(X_train)
+    loss = loss_fn(outputs, Y_train)
+    loss.backward()
+    optimizer.step()
+
+    if i % 1000 == 0: 
+        print(loss)
+
+
+def evaluate_model(X, Y):
+    model.eval()
+    with torch.no_grad():
+        Y_pred = nn.functional.sigmoid(model(X)) > 0.25
+        print("accuracy:", (Y_pred == Y).type(torch.float32).mean())
+        
+        print("sensitivity:", (Y_pred[Y == 1] == Y[Y == 1]).type(torch.float32).mean())
+        
+        print("specificity:", (Y_pred[Y == 0] == Y[Y == 0]).type(torch.float32).mean())
+
+        print("precision:", (Y_pred[Y_pred == 1] == Y[Y_pred == 1]).type(torch.float32).mean())
+
+
+print("Evaluating on the training data")
+evaluate_model(X_train, Y_train)
+
+print("Evaluating on the validation data")
+evaluate_model(X_val, Y_val)
+
+# However, be aware that this spam filter has been trained on SMS text messages so the number of characters are extremely limited. Lets say we add this "We have release a new product, do you want to buy it?" which couldn't have been a spam SMS back then. Um, so it may or may not, um, detect this as spam or not.
+custom_messages = cv.transform([
+    "We have release a new product, do you want to buy it?", 
+    "Winner! Great deal, call us to get this product for free",
+    "Tomorrow is my birthday, do you come to the party?"
+])
+
+X_custom = torch.tensor(custom_messages.todense(), dtype=torch.float32)
+
+with torch.no_grad():
+    pred = nn.functional.sigmoid(model(X_custom))
+    print(pred)
+
+
 # import sys
 # import torch
 # from torch import nn
