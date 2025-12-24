@@ -49,3 +49,10 @@
 - But there are hyper parameters that influence the structure of the model. For example for the countvectorizer how many features we got there, how many inputs we have here, what's the learning rate, how many training passes we got, where we do the cut off here when we consider something spam or not spam. So all of these things would be considered hyper parameters here.
 
 ![evaluating model](readmeimages/training_validation_test.png)
+
+# idea Embeddings
+
+- And then the question would be, can't we just use this then to enhance or to run our spam filter. And it turns out that if we do so, then our spam filter will suddenly work extremely well because we are then no longer training it on individual words, but on the meaning of the text.
+- And then suddenly also completely unknown things that, for example, just nowadays would be used inside emails could be captured as spam.
+
+![Idea embeddings](readmeimages/idea_embeddings.png)
