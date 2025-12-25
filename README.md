@@ -59,6 +59,10 @@
 
 # Neuron to Neural network
 
+- So, far we have learned how we can train a single neuron and how that one can learn. The next step is that we want to stack multiple neurons together to create a neural network.
+- We had a single neuron that made a prediction here based on some inputs. And what we are going to explore throughout this chapter is what if we, for example, just put a few neurons before they can do some processing here. And then the output here then gets used as an input for this neuron. And then we use this to make the prediction.
+- So you can see here how now we just have a stack of neurons here. They all have access to all the inputs here in this case. So all the inputs are connected to all the neurons here. They all have individual weights and also biases. They make here an intermediate prediction. And then this is being used for this neuron to then make the final prediction here.
+
 ![Neuron to Neural network](readmeimages/neuron_to_neuron_network1.png)
 
 ![Neuron to Neural network](readmeimages/neuron_to_neuron_network2.png)
