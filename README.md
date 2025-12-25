@@ -56,3 +56,9 @@
 - And then suddenly also completely unknown things that, for example, just nowadays would be used inside emails could be captured as spam.
 
 ![Idea embeddings](readmeimages/idea_embeddings.png)
+
+# Neuron to Neural network
+
+![Idea embeddings](readmeimages/idea_embeddings.png)
+
+![Idea embeddings](readmeimages/idea_embeddings.png)
