@@ -28,17 +28,21 @@
 ## sensitivity:
 
 - sensitivity or true positive rate: This is the proportion of actual spam messages that got correctly identified. gGiven that we got a spam message, what percentage did the model predict correctly.
+
 - It may be accurate in a sense that It detects a lot of things correctly, but for example, the sensitivity could be really low and in this case we would not actually filter many spam messages.
+
 - For example, let's say you got you get 1000 normal emails and one spam email. If you had a model that would always accept all the emails and never reject any emails, then the accuracy would be really high because we have 1000 messages that got correctly accepted and one spam message that just got accepted as well However, the sensitivity here would be extremely low. It would be zero here, because the proportion of actual spam messages that got correctly identified
 
 ## specificity or the true negative rate:
 
 - This is the proportion of actual non-spam messages that got correctly identified. So given that we are not having a spam message, what percentage did the model predict correctly.
+
 - if you don't get an email from a potential customer and that would be a complaint, that could have serious consequences.
 
 ## Prediction:
 
 - This stands for the proportion of predicted spam messages that are actually spam.
+
 - given that the that the prediction is spam, what percentage had been spam originally.
 
 ![evaluating model](readmeimages/evaluating_model.png)
@@ -46,6 +50,7 @@
 # Train / Validation / Test:
 
 - we got normal parameters here(like bias, weights etc) that our model has. These are learned here during training.
+
 - But there are hyper parameters that influence the structure of the model. For example for the countvectorizer how many features we got there, how many inputs we have here, what's the learning rate, how many training passes we got, where we do the cut off here when we consider something spam or not spam. So all of these things would be considered hyper parameters here.
 
 ![evaluating model](readmeimages/training_validation_test.png)
@@ -60,9 +65,29 @@
 # Neuron to Neural network
 
 - So, far we have learned how we can train a single neuron and how that one can learn. The next step is that we want to stack multiple neurons together to create a neural network.
+
 - We had a single neuron that made a prediction here based on some inputs. And what we are going to explore throughout this chapter is what if we, for example, just put a few neurons before they can do some processing here. And then the output here then gets used as an input for this neuron. And then we use this to make the prediction.
+
 - So you can see here how now we just have a stack of neurons here. They all have access to all the inputs here in this case. So all the inputs are connected to all the neurons here. They all have individual weights and also biases. They make here an intermediate prediction. And then this is being used for this neuron to then make the final prediction here.
 
 ![Neuron to Neural network](readmeimages/neuron_to_neuron_network1.png)
 
 ![Neuron to Neural network](readmeimages/neuron_to_neuron_network2.png)
+
+# Linearity problem and non-linear activation functions
+
+- We want to explore in a visual way why we actually need a neural network, why a single neuron can't be able to grab all the problems, or why we can't use it to solve all the problems.
+
+- So linearity means that we have limited learning capabilities. We are not going to be able to capture complex non-linear patterns in our data.
+
+- A single linear neuron, even with a sigmoid function, won't be able to capture these non-linear relationships.
+
+- For example, let's say we just had two variables, and based on that, we needed to make a prediction. Blue or orange. And in that case here in this case this would be a simple relationship that could be learned.
+
+- Because what we could do is that we could just kind of like draw the line like this and then we would be able to capture this here.
+
+- Um, so this would be a relationship that we would be able to capture with our linear neuron, and then we would put the sigmoid activation function on it, uh, to then we would have something like this here. Um, for example, orange could then be negative values. Blue could then be positive values. And then they get turned through the sigmoid function into probabilities.
+
+![Linearity problem](readmeimages/linearity_problem.png)
+
+![Non linear activation functions](readmeimages/non_linear_activation_function.png)
