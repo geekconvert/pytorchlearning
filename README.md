@@ -59,6 +59,6 @@
 
 # Neuron to Neural network
 
-![Idea embeddings](readmeimages/idea_embeddings.png)
+![Neuron to Neural network](readmeimages/idea_embeddings.png)
 
-![Idea embeddings](readmeimages/idea_embeddings.png)
+![Neuron to Neural network](readmeimages/idea_embeddings.png)
