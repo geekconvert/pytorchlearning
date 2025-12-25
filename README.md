@@ -88,6 +88,12 @@
 
 - Um, so this would be a relationship that we would be able to capture with our linear neuron, and then we would put the sigmoid activation function on it, uh, to then we would have something like this here. Um, for example, orange could then be negative values. Blue could then be positive values. And then they get turned through the sigmoid function into probabilities.
 
+- Well we could try we could try something like this. Well it's not going to be able to describe the data.
+
+- What we would need now would be something like this that we would be like, okay, all the blue entries are inside this area here, and this now would just be a relationship that we would not be able to capture with a linear neuron.
+
+- So linearity means that we got limited learning power. And this also means if we would now just have a network here that if the hidden layers are linear, the final output layer would also be just linear.
+
 ![Linearity problem](readmeimages/linearity_problem.png)
 
 ![Non linear activation functions](readmeimages/non_linear_activation_function.png)
