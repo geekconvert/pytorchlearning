@@ -104,4 +104,6 @@
 
 - Math behind BackPropagation
 
+- The error is kind of like just the meaning of how would we need to have changed this output here with respect to our loss function
+
 ![back_propagation Math](readmeimages/back_propagation.png)
