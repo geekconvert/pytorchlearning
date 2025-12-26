@@ -107,3 +107,11 @@
 - The error is kind of like just the meaning of how would we need to have changed this output here with respect to our loss function
 
 ![back_propagation Math](readmeimages/back_propagation.png)
+
+# Structure of the network
+
+- We've chosen a hidden layer size of ten neurons. Well I had to choose something. So this felt like could be something that could work, but this would be something that we would need to tune with by withholding validation data. And this is something that we would need to tune just as all the other hyperparameters in our network. But I would say ten neurons in the hidden layer could be a good starting point.
+
+- We we got ten hidden outputs here. They are all then connected to the last neuron which is then going to make a make a prediction. And of course there the sigmoid is applied. The sigmoid function is being applied to that because we are using the BCEWithLogitsLoss Loss function that includes the sigmoid function there.
+
+![structure_of_the_network](readmeimages/structure_of_the_network.png)
