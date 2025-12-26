@@ -97,3 +97,11 @@
 ![Linearity problem](readmeimages/linearity_problem.png)
 
 ![Non linear activation functions](readmeimages/non_linear_activation_function.png)
+
+# BackPropagation
+
+![BackPropagation](readmeimages/backpropagation.png)
+
+- Math behind BackPropagation
+
+![back_propagation Math](readmeimages/back_propagation.png)
