@@ -116,7 +116,11 @@
 
 ![structure_of_the_network](readmeimages/structure_of_the_network.png)
 
-# ReLu
+# ReLU
+
+- So far here we had our inputs and then we had ten neurons here in this layer. It's abbreviated here again. But we calculated the sum and then applied the sigmoid function to it. And then fed this output into one last neuron to then actually make the prediction. So we used the sigmoid function as an activation function in between just because it breaks linearity.
+
+- So once this linearity has had been broken, the weights of the network could then adjust to the rest
 
 ![relu_1](readmeimages/relu_1.png)
 
