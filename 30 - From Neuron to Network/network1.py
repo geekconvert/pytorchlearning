@@ -23,11 +23,17 @@ for param in hidden_model.parameters():
 parameters = list(hidden_model.parameters()) + list(output_model.parameters())
 optimizer = torch.optim.SGD(parameters, lr=0.005)
 
-
-for i in range(0, 500000):
+# we now need to first apply here the first hidden layer. Then We will then need to apply the sigmoid function on the output of the hidden layer. And on that output we will then need to apply the output layer or the output model.
+# If training a neuron with 500,000 iterations takes too long, try reducing the number of iterations to 250,000 and increasing the learning rate, for example, to 0.025.
+# When working with networks, it is possible to get stuck in local minima for several iterations or more due to the random initialization of weights and biases. If the loss does not decrease for a significant portion of the iterations, rerunning the model might help. This issue depends on factors such as the number of training iterations, the learning rate, activation functions and the optimizer. To resolve it, experiment with these parameters until a working solution is found.
+# If you are not satisfied with the accuracy and observe that the loss is still decreasing, you can train the model for more iterations. The exact number will depend on how long you are willing to train and the level of accuracy you aim to achieve.
+for i in range(0, 600000):
     optimizer.zero_grad()
+    # hidden model to be applied to the input data.
     outputs = hidden_model(X)
+    # now we need to apply the sigmoid function to output.
     outputs = nn.functional.sigmoid(outputs)
+    # now we need to apply our output model here to our existing outputs.
     outputs = output_model(outputs)
     loss = loss_fn(outputs, y)
     loss.backward()
@@ -36,12 +42,6 @@ for i in range(0, 500000):
     if i % 10000 == 0:
         print(loss)
 
-
-model.eval()
-with torch.no_grad():
-    y_pred = nn.functional.sigmoid(model(X)) > 0.5
-    y_pred_correct = y_pred.type(torch.float32) == y
-    print(y_pred_correct.type(torch.float32).mean())
 
 # import sys
 # import torch

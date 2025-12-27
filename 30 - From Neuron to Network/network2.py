@@ -1,16 +1,12 @@
-import sys
 import torch
 from torch import nn
 import pandas as pd
 
+
 df = pd.read_csv("./data/student_exam_data.csv")
 
-X = torch.tensor(
-    df[["Study Hours", "Previous Exam Score"]].values, 
-    dtype=torch.float32
-)
-y = torch.tensor(df["Pass/Fail"], dtype=torch.float32)\
-    .reshape((-1, 1))
+X = torch.tensor(df[["Study Hours", "Previous Exam Score"]].values, dtype=torch.float32)
+y = torch.tensor(df["Pass/Fail"], dtype=torch.float32).reshape((-1, 1))
 
 hidden_model = nn.Linear(2, 10)
 output_model = nn.Linear(10, 1)
@@ -18,10 +14,13 @@ loss_fn = torch.nn.BCEWithLogitsLoss()
 parameters = list(hidden_model.parameters()) + list(output_model.parameters())
 optimizer = torch.optim.SGD(parameters, lr=0.005)
 
-for i in range(0, 500000):
+for i in range(0, 800000):
     optimizer.zero_grad()
+    # hidden model to be applied to the input data.
     outputs = hidden_model(X)
+    # now we need to apply the sigmoid function to output.
     outputs = nn.functional.sigmoid(outputs)
+    # now we need to apply our output model here to our existing outputs.
     outputs = output_model(outputs)
     loss = loss_fn(outputs, y)
     loss.backward()
@@ -30,12 +29,59 @@ for i in range(0, 500000):
     if i % 10000 == 0:
         print(loss)
 
+
+# This just turns off training specific features.
 hidden_model.eval()
 output_model.eval()
+
 with torch.no_grad():
     outputs = hidden_model(X)
     outputs = nn.functional.sigmoid(outputs)
     outputs = output_model(outputs)
-    y_pred = nn.functional.sigmoid(outputs) > 0.5
-    y_pred_correct = y_pred.type(torch.float32) == y
+
+    # we need to apply the sigmoid function to it, because this is the activation function of the ast layer, because here in our case, our neural network should make a yes no prediction.
+    Y_pred = nn.functional.sigmoid(outputs) > 0.5
+    y_pred_correct = Y_pred.type(torch.float32) == y
     print(y_pred_correct.type(torch.float32).mean())
+
+# import sys
+# import torch
+# from torch import nn
+# import pandas as pd
+
+# df = pd.read_csv("./data/student_exam_data.csv")
+
+# X = torch.tensor(
+#     df[["Study Hours", "Previous Exam Score"]].values, 
+#     dtype=torch.float32
+# )
+# y = torch.tensor(df["Pass/Fail"], dtype=torch.float32)\
+#     .reshape((-1, 1))
+
+# hidden_model = nn.Linear(2, 10)
+# output_model = nn.Linear(10, 1)
+# loss_fn = torch.nn.BCEWithLogitsLoss()
+# parameters = list(hidden_model.parameters()) + list(output_model.parameters())
+# optimizer = torch.optim.SGD(parameters, lr=0.005)
+
+# for i in range(0, 500000):
+#     optimizer.zero_grad()
+#     outputs = hidden_model(X)
+#     outputs = nn.functional.sigmoid(outputs)
+#     outputs = output_model(outputs)
+#     loss = loss_fn(outputs, y)
+#     loss.backward()
+#     optimizer.step()
+
+#     if i % 10000 == 0:
+#         print(loss)
+
+# hidden_model.eval()
+# output_model.eval()
+# with torch.no_grad():
+#     outputs = hidden_model(X)
+#     outputs = nn.functional.sigmoid(outputs)
+#     outputs = output_model(outputs)
+#     y_pred = nn.functional.sigmoid(outputs) > 0.5
+#     y_pred_correct = y_pred.type(torch.float32) == y
+#     print(y_pred_correct.type(torch.float32).mean())
