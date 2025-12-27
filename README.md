@@ -122,6 +122,20 @@
 
 - So once this linearity has had been broken, the weights of the network could then adjust to the rest
 
+- in ReLU all the values below zero turn into just zero, and then all the values above zero. They are just being taken as they are.
+
+- the sigmoid function outputted values between 0 and 1. And they can result into very very small gradients during back propagation. So if we had multiple layers there The gradients could become small, and then it's more difficult for the network to adjust the weights. However, for us here so far our network was relatively small, so this was not a major issue.
+
+- Um, the the advantage here of the ReLU function is that it outputs either zero or the input itself if positive. And this is extremely easy, then to take the gradient. Fr example here, if it would be one, then we would just need to divide it by one, which we don't even need to do. We can just backpropagate it directly. And if we are at less than 0, then the activation there with respect to this neuron would be zero. And in that case we can just ignore it. So this makes backpropagation extremely simple because either the gradient here is exactly one or it is zero.
+
+- Also we don't have, gradients that become smaller and smaller. Here the gradient would be one or zero. This property would be the so-called sparse activation.
+
+- And just imagine we would be using this on the output of ten neurons. Then probably by chance, about five of these neurons would output a value below zero, which would then be just after applying ReLU. It would just be a zero then. And five of the neurons would predict a value above zero. And then we would just take the value here. So when we are using this activation function, only about 50% of neurons are activated. And this reduced or reduces the computational complexity and improves the generalization of the network, meaning that if it can't rely on some neurons or they suddenly are just zero, then the network is forced to look at the big picture instead of getting lost in the details.
+
+- The next thing is that, of course, everything here is quite efficient to compute because it only involves a max operation which is extremely efficient or easy to calculate. And this is significantly easier to compute compared to the exponentials that we had when we utilized the sigmoid functions.
+
+- Last but not least, this function of course, also breaks linearity because this is no longer a linear equation here if we have a look at this. So linearity has also been broken here.
+
 ![relu_1](readmeimages/relu_1.png)
 
 ![relu_2](readmeimages/relu_2.png)
