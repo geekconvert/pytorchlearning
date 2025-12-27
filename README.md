@@ -146,4 +146,12 @@
 
 # Adam Optimizer
 
+- The optimizer is responsible for optimizing the parameters meaning for example the weights here of this layer, the weights of this layer, the biases of these layers and so on. So all the parameters parameters here of our model are being optimized. And here in this case by stochastic gradient descent
+
+- Previously to train the network we had to minimize the loss function. And our goal was to find the best parameters for example w1, w2 and b to minimize this loss function to end up here at the minimum.
+
+- you can see here the slope is relatively fast, so our steps are very big. And then at some point here the slope is no longer that steep. And then we need to do a lot of steps. So here we would then do a lot of steps. Uh, and then at some point we would end up here at the minimum.
+
+- But there's another approach that's called Adam or adaptive moment estimation.
+
 ![adam_optimizer](readmeimages/adam_optimizer.png)
