@@ -23,6 +23,13 @@ for i in range(0, 800000):
     if i % 10000 == 0:
         print(loss)
 
+model.eval()
+with torch.no_grad():
+    outputs = model(X)
+    y_pred = nn.functional.sigmoid(outputs) > 0.5
+    y_pred_correct = y_pred.type(torch.float32) == y
+    print(y_pred_correct.type(torch.float32).mean())
+
 # import sys
 # import torch
 # from torch import nn

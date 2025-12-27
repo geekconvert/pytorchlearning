@@ -115,3 +115,13 @@
 - We we got ten hidden outputs here. They are all then connected to the last neuron which is then going to make a make a prediction. And of course there the sigmoid is applied. The sigmoid function is being applied to that because we are using the BCEWithLogitsLoss Loss function that includes the sigmoid function there.
 
 ![structure_of_the_network](readmeimages/structure_of_the_network.png)
+
+# ReLu
+
+![relu_1](readmeimages/relu_1.png)
+
+![relu_2](readmeimages/relu_2.png)
+
+![relu_3](readmeimages/relu_3.png)
+
+![relu_4](readmeimages/relu_4.png)
