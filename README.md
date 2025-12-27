@@ -143,3 +143,7 @@
 ![relu_3](readmeimages/relu_3.png)
 
 ![relu_4](readmeimages/relu_4.png)
+
+# Adam Optimizer
+
+![adam_optimizer](readmeimages/adam_optimizer.png)
