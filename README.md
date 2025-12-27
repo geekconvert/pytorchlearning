@@ -155,3 +155,7 @@
 - But there's another approach that's called Adam or adaptive moment estimation.
 
 ![adam_optimizer](readmeimages/adam_optimizer.png)
+
+# Mini Batch Learning
+
+![mini_batch_learning](readmeimages/mini_batch_learning.png)
