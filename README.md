@@ -56,6 +56,8 @@
 
 - So on the y axis is our loss function that we want to minimize. And on the x axis it would be our parameter w1. If we go to the right or um yeah here we would increase w1 and into this direction we would decrease w1.
 
+- So what we are interested in is this slope.
+
 <img src="readmeimages/how_neuron_learns_5.png" alt="how_neuron_learns" width="60%">
 
 <img src="readmeimages/how_neuron_learns_6.png" alt="how_neuron_learns" width="60%">
