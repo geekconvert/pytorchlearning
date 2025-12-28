@@ -42,6 +42,18 @@
 
 <img src="readmeimages/what_is_a_tensor.png" alt="what_is_a_tensor" width="60%">
 
+# How neuron learns
+
+<img src="readmeimages/how_neuron_learns_1.png" alt="how_neuron_learns" width="60%">
+
+<img src="readmeimages/how_neuron_learns_2.png" alt="how_neuron_learns" width="60%">
+
+<img src="readmeimages/how_neuron_learns_3.png" alt="how_neuron_learns" width="60%">
+
+- So the idea with learning is that we want to now nudge the parameters here in our case w1 and B, and we want to nudge them into the right direction to minimize the loss function. We do this by checking in which direction and how far we would have to nudge these parameters. And then we are like, okay, this parameter, we would have to nudge quite much and this one a little bit less, but then we multiply it with a learning rate. This is usually referred to as eta. And this defines how much we want to nudge these parameters or these weights. And typically it's between 0.001 and 0.1.
+
+<img src="readmeimages/how_neuron_learns_4.png" alt="how_neuron_learns" width="60%">
+
 # TF IDF
 
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.
