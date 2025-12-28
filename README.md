@@ -28,6 +28,20 @@
 
 <img src="readmeimages/degree_celcius_to_farenheit.png" alt="degree_celcius_to_farenheit" width="60%">
 
+# Tensor
+
+- Tensors are a core concept in PyTorch. But they are pretty much just a box in which values are being stored.
+
+- This enables efficient data handling because this makes our calculations a bit more efficient because this box can be stored, for example, on optimized hardware such as GPUs, and calculations can then be performed there.
+
+- And the big advantage is that us as programmers, we can just write normal Python code, and PyTorch just happens to store the actual data on the optimized hardware. But we don't, for example, need to write the code that actually runs on the GPU. And this makes it relatively easy to write GPU optimized code.
+
+- because of this, uh, these tensors significantly speed up deep learning training, meaning that we want to extract meaning from data and inference, which means that we want to apply a model to new data. So both of these can be significantly sped up.
+
+- There are different versions of a tensor. So for example, a tensor could just hold a single value. Or you can see here multiple values or even a matrix.
+
+<img src="readmeimages/what_is_a_tensor.png" alt="what_is_a_tensor" width="60%">
+
 # TF IDF
 
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.
