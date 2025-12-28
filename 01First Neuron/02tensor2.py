@@ -7,8 +7,9 @@ X1 = torch.tensor([10, 38, 100, 150])
 
 y_pred = 1 * b + X1 * w1
 
-print(b.shape) # this means that this tensor here only holds a single value.
-print(X1.shape) # there are now here four elements in this tensor.
+# So this shape property allows you to identify the structure of the data that is in a tensor.
+print(b.shape) # [] this means that this tensor here only holds a single value.
+print(X1.shape) # [4] there are now here four elements in this tensor.
 print(b.size())
 print(X1.size())
 print(y_pred[0]) # to access the first element of the tensor, But this is still in the tensor.
