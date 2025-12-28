@@ -54,6 +54,14 @@
 
 <img src="readmeimages/how_neuron_learns_4.png" alt="how_neuron_learns" width="60%">
 
+- So on the y axis is our loss function that we want to minimize. And on the x axis it would be our parameter w1. If we go to the right or um yeah here we would increase w1 and into this direction we would decrease w1.
+
+<img src="readmeimages/how_neuron_learns_5.png" alt="how_neuron_learns" width="60%">
+
+<img src="readmeimages/how_neuron_learns_6.png" alt="how_neuron_learns" width="60%">
+
+<img src="readmeimages/how_neuron_learns_7.png" alt="how_neuron_learns" width="60%">
+
 # TF IDF
 
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.
