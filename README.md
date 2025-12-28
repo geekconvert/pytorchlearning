@@ -1,6 +1,6 @@
 # Model
 
-- Id we have a table then each of these columns would be a feature of the data. Or if we wanted to train our model with, for example, images, then each pixel there could be considered a feature.
+- If we have a table then each of these columns would be a feature of the data. Or if we wanted to train our model with, for example, images, then each pixel there could be considered a feature.
 
 - From this training data we can then train a model.
 
@@ -11,6 +11,12 @@
 - So this is the whole structure of the machine learning training process here. Throughout this course we are going to focus on neurons and then also on neural networks, which are nowadays one of the most common structures to perform machine learning. But just be aware, there might also be or there are also other machine learning algorithms that we could plug in and use as a model. But I would say nowadays neural networks are the most common
 
 <img src="readmeimages/what_is_a_model.png" alt="what_is_a_model" width="60%">
+
+# A neuron
+
+- Here we have Features. These are our data points. Then we have weights this is what model is going to learn or the parameters of the model. Then we have the neuron that combines all of these things together. And then at the end we have a prediction here.
+
+<img src="readmeimages/neuron.png>
 
 # TF IDF
 
