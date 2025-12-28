@@ -58,6 +58,22 @@
 
 - So what we are interested in is this slope.
 
+- adjust parameters based on their influence. The greater the impact of a parameter, the greater we need to adjust it. If the impact of a parameter is minimal, then we also just need to adjust this parameter like significantly less.
+
+- gradient tells us how much a parameter affects the error. It shows the direction and the rate of change of the error with respect to that parameter. We calculate the gradient for each parameter that we want to optimize, and then we know how this parameter influences the outcome of the loss function.
+
+- our x axis, we have a plot of our parameter w1 vs loss function in y-axis
+
+- `-6124.15` just means if we were to increase w1 then our for example by one, then probably our loss would go down by 6124.15.
+
+- If we would increase b then our loss would also go down, but not as much as uh for W1.
+
+- To calculate all of these derivatives. PyTorch is already doing that for us and we don't need to worry about it.
+
+- We introduce a learning rate because we don't want to do the full adjustment. That would be too much. We risk overshooting things. We want to slowly approach the minimum. So we introduce a learning rate to slow everything down a little bit.
+
+- Learning rate: This is kind of like the step size that controls how much each weight is updated.
+
 <img src="readmeimages/how_neuron_learns_5.png" alt="how_neuron_learns" width="60%">
 
 <img src="readmeimages/how_neuron_learns_6.png" alt="how_neuron_learns" width="60%">
