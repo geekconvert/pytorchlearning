@@ -18,6 +18,14 @@
 
 <img src="readmeimages/neuron.png" alt="neuron" width="60%">
 
+- So the input here consists out of a single feature, that is the temperature in degrees Celsius, and the output should be the temperature in degrees Fahrenheit.
+
+- The temperature in degrees Celsius that you can see here it's x1.
+
+- We can see here this weight the first weight here for the first feature. Here we only got one. But this would be need to be set to 1.8. This is a parameter that we would usually come up with during training. So all of these parameters here would be learned. But for now we are just going to set them to the correct values.
+
+- Then here we got our bias term. The bias term pretty much just means that we always have a feature that is set to one or like a vertical virtual feature. So this one here is not actually part of our data, but it's always a one.
+
 <img src="readmeimages/degree_celcius_to_farenheit.png" alt="degree_celcius_to_farenheit" width="60%">
 
 # TF IDF
