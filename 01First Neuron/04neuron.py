@@ -11,6 +11,7 @@ X = torch.tensor([
 
 # I want to create a linear neuron.
 # one input and we want to create one linear neuron. So here we have one input because we only have one feature that we are looking at here one column column in our data. And we have one output here or one neuron that we want to create.
+# So this model here is defining our neuron. And our neuron has some properties. It has a bias and also a weight here or a first weight here.
 model = nn.Linear(1, 1)
 print(model)
 
