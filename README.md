@@ -17,13 +17,13 @@
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.
 - Inverse document frequency : Then we also got the IDF, the inverse document frequency. And there the idea is that we want to reduce the weight of common terms. For example if "the" word the would be contained in all of our messages, then we would take the total number of documents. Let's say for example, we had 5000 documents and 5000 of these documents would contain the word "the". So the word the would be completely meaningless. In that case we would have 5000 divided by 5000. That would be one And then the logarithm of that would be zero.
 
-![TF-IDF visualization](readmeimages/tf_idf.png)
+<img src="readmeimages/tf_idf.png" alt="TF-IDF visualization" width="60%">
 
 # Sigmoid function
 
 - function that can just map linear output to the range of 0 to 1.
 
-![sigmoid function](readmeimages/sigmoid.png)
+<img src="readmeimages/sigmoid.png" alt="sigmoid function" width="60%">
 
 # Using sigmoid and BCEWithLogitsLoss
 
@@ -31,7 +31,7 @@
 - So yes, we apply the sigmoid function to the output of the neuron. But then when it comes to the loss, we use this BCE loss (binary cross entropy loss) to kind of like undo a little bit of the effects of the sigmoid function. And then we still have this pulling force when it comes to the loss function.
 - So we are applying the sigmoid so that we get probabilities to the neuron. And then with the BCE loss function, we are then kind of like undoing a little bit there so that we can still train properly,
 
-![sigmoid function](readmeimages/using_sigmoid.png)
+<img src="readmeimages/using_sigmoid.png" alt="sigmoid function" width="60%">
 
 # Evaluating model
 
@@ -59,7 +59,7 @@
 
 - given that the that the prediction is spam, what percentage had been spam originally.
 
-![evaluating model](readmeimages/evaluating_model.png)
+<img src="readmeimages/evaluating_model.png" alt="evaluating model" width="60%">
 
 # Train / Validation / Test:
 
@@ -67,14 +67,14 @@
 
 - But there are hyper parameters that influence the structure of the model. For example for the countvectorizer how many features we got there, how many inputs we have here, what's the learning rate, how many training passes we got, where we do the cut off here when we consider something spam or not spam. So all of these things would be considered hyper parameters here.
 
-![evaluating model](readmeimages/training_validation_test.png)
+<img src="readmeimages/training_validation_test.png" alt="evaluating model" width="60%">
 
 # idea Embeddings
 
 - And then the question would be, can't we just use this then to enhance or to run our spam filter. And it turns out that if we do so, then our spam filter will suddenly work extremely well because we are then no longer training it on individual words, but on the meaning of the text.
 - And then suddenly also completely unknown things that, for example, just nowadays would be used inside emails could be captured as spam.
 
-![Idea embeddings](readmeimages/idea_embeddings.png)
+<img src="readmeimages/idea_embeddings.png" alt="Idea embeddings" width="60%">
 
 # Neuron to Neural network
 
@@ -84,9 +84,9 @@
 
 - So you can see here how now we just have a stack of neurons here. They all have access to all the inputs here in this case. So all the inputs are connected to all the neurons here. They all have individual weights and also biases. They make here an intermediate prediction. And then this is being used for this neuron to then make the final prediction here.
 
-![Neuron to Neural network](readmeimages/neuron_to_neuron_network1.png)
+<img src="readmeimages/neuron_to_neuron_network1.png" alt="Neuron to Neural network" width="60%">
 
-![Neuron to Neural network](readmeimages/neuron_to_neuron_network2.png)
+<img src="readmeimages/neuron_to_neuron_network2.png" alt="Neuron to Neural network" width="60%">
 
 # Linearity problem and non-linear activation functions
 
@@ -108,19 +108,19 @@
 
 - So linearity means that we got limited learning power. And this also means if we would now just have a network here that if the hidden layers are linear, the final output layer would also be just linear.
 
-![Linearity problem](readmeimages/linearity_problem.png)
+<img src="readmeimages/linearity_problem.png" alt="Linearity problem" width="60%">
 
-![Non linear activation functions](readmeimages/non_linear_activation_function.png)
+<img src="readmeimages/non_linear_activation_function.png" alt="Non linear activation functions" width="60%">
 
 # BackPropagation
 
-![BackPropagation](readmeimages/backpropagation.png)
+<img src="readmeimages/backpropagation.png" alt="BackPropagation" width="60%">
 
 - Math behind BackPropagation
 
 - The error is kind of like just the meaning of how would we need to have changed this output here with respect to our loss function
 
-![back_propagation Math](readmeimages/back_propagation.png)
+<img src="readmeimages/back_propagation.png" alt="back_propagation Math" width="60%">
 
 # Structure of the network
 
@@ -128,7 +128,7 @@
 
 - We we got ten hidden outputs here. They are all then connected to the last neuron which is then going to make a make a prediction. And of course there the sigmoid is applied. The sigmoid function is being applied to that because we are using the BCEWithLogitsLoss Loss function that includes the sigmoid function there.
 
-![structure_of_the_network](readmeimages/structure_of_the_network.png)
+<img src="readmeimages/structure_of_the_network.png" alt="structure_of_the_network" width="60%">
 
 # ReLU
 
@@ -150,13 +150,13 @@
 
 - Last but not least, this function of course, also breaks linearity because this is no longer a linear equation here if we have a look at this. So linearity has also been broken here.
 
-![relu_1](readmeimages/relu_1.png)
+<img src="readmeimages/relu_1.png" alt="relu_1" width="60%">
 
-![relu_2](readmeimages/relu_2.png)
+<img src="readmeimages/relu_2.png" alt="relu_2" width="60%">
 
-![relu_3](readmeimages/relu_3.png)
+<img src="readmeimages/relu_3.png" alt="relu_3" width="60%">
 
-![relu_4](readmeimages/relu_4.png)
+<img src="readmeimages/relu_4.png" alt="relu_4" width="60%">
 
 # Adam Optimizer
 
@@ -168,8 +168,8 @@
 
 - But there's another approach that's called Adam or adaptive moment estimation.
 
-![adam_optimizer](readmeimages/adam_optimizer.png)
+<img src="readmeimages/adam_optimizer.png" alt="adam_optimizer" width="60%">
 
 # Mini Batch Learning
 
-![mini_batch_learning](readmeimages/mini_batch_learning.png)
+<img src="readmeimages/mini_batch_learning.png" alt="mini_batch_learning" width="60%">
