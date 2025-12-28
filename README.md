@@ -16,7 +16,9 @@
 
 - Here we have Features. These are our data points. Then we have weights this is what model is going to learn or the parameters of the model. Then we have the neuron that combines all of these things together. And then at the end we have a prediction here.
 
-<img src="readmeimages/neuron.png>
+<img src="readmeimages/neuron.png" alt="neuron" width="60%">
+
+<img src="readmeimages/degree_celcius_to_farenheit.png" alt="degree_celcius_to_farenheit" width="60%">
 
 # TF IDF
 
