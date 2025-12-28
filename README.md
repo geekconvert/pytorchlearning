@@ -10,7 +10,7 @@
 
 - So this is the whole structure of the machine learning training process here. Throughout this course we are going to focus on neurons and then also on neural networks, which are nowadays one of the most common structures to perform machine learning. But just be aware, there might also be or there are also other machine learning algorithms that we could plug in and use as a model. But I would say nowadays neural networks are the most common
 
-![what_is_a_model](readmeimages/what_is_a_model.png)
+<img src="readmeimages/what_is_a_model.png" alt="what_is_a_model" width="50%">
 
 # TF IDF
 
