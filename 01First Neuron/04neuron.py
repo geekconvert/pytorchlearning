@@ -22,7 +22,7 @@ print(model.weight)
 y_pred = model(X)
 print(y_pred)
 
-# This just turns a tensor into a parameter that we can then work with. This needs to be in the same shape as the original bias and weight. Thats why [32.0] and [1.8]]
+# This just turns a tensor into a parameter that we can then work with. This needs to be in the same shape as the original bias and weight. Thats why [32.0] and [[1.8]]
 model.bias = nn.Parameter(
     torch.tensor([32.0])
 )
