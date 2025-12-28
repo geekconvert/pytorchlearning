@@ -1,3 +1,17 @@
+# Model
+
+- Id we have a table then each of these columns would be a feature of the data. Or if we wanted to train our model with, for example, images, then each pixel there could be considered a feature.
+
+- From this training data we can then train a model.
+
+- The model learns so-called parameters. These are the values that the model internally adjusts or learns in order to be able to fit or to describe the data. Fit would be the technical term. Training is the process during which the model learns how to deal with this data, so it tries to reduce the difference between its prediction and the actual result of our data. So this is the process of training in which the model learns its parameters.
+
+- And then once everything is done, we can then use the model to make predictions. This process is called inference. And this just means that we want to then apply the model to new data. And then what we get out of the model would be a prediction which is the predicted result. And this is then the output of the model.
+
+- So this is the whole structure of the machine learning training process here. Throughout this course we are going to focus on neurons and then also on neural networks, which are nowadays one of the most common structures to perform machine learning. But just be aware, there might also be or there are also other machine learning algorithms that we could plug in and use as a model. But I would say nowadays neural networks are the most common
+
+![what_is_a_model](readmeimages/what_is_a_model.png)
+
 # TF IDF
 
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.
