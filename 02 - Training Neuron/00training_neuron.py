@@ -15,8 +15,14 @@ y2 = torch.tensor([[100.0]], dtype=torch.float32)
 model = nn.Linear(1, 1)
 
 # now we want to prepare for training. And what we want to do here is that we first need to specify a few things.
-# loss function is mean squared error loss. And this loss function just happens to be already implemented for me.
+# loss function is mean squared error loss. And this loss function just happens to be already implemented in pytorch.
 loss_fn = torch.nn.MSELoss()
+
+# if loss function needs to added used manually, we can do it like this:
+print("loss_fn", loss_fn(
+    torch.tensor([5.5], dtype=torch.float32), 
+    torch.tensor([10.0], dtype=torch.float32)
+))
 # we also need to configure how the model should be optimized. Stochastic Gradient Descent. This stochastic gradient descent or all the optimizers in PyTorch, they expect us as a first parameter to pass in the parameters that can be optimized here. And only these parameters are going to get optimized.
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
 
