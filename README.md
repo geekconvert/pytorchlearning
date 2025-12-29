@@ -82,6 +82,20 @@
 
 # Importance of MSE
 
+- A, B, C, D these would be the points that I wanted to fit with my data.
+
+- As long as the line is within our data points, nothing changes here and loss would exactly be 8. And only if we go outside of the range of our points Then you can see here how now here the loss is actually increasing.
+
+- We might land up at the solution of line passing through A and D or line passing through B and C.
+
+- But in the real world this is not the case. It's usually better to be always a little bit off than a few times. We are really far off.
+
+- Now with MSE we have a line at the middle of these points. And this is usually a better solution.
+
+- this is usually a way better solution because now we are always a bit off. But at least we are consistent about that. And overall we are matching the general trend of the data better.
+
+- this is the big advantage of mean squared error that if for example we have multiple solutions it well they are no longer multiple solutions. But we now here actually try to match something in the middle. And we also say that we are rather a little bit off a bit more often than a lot of in a few cases. And this is exactly what the mean squared error achieves here.
+
 <img src="readmeimages/mse_importance_1.png" alt="mse_importance" width="60%">
 
 <img src="readmeimages/mse_importance_2.png" alt="mse_importance" width="60%">
@@ -93,6 +107,10 @@
 <img src="readmeimages/mse_importance_5.png" alt="mse_importance" width="60%">
 
 <img src="readmeimages/mse_importance_6.png" alt="mse_importance" width="60%">
+
+# Batch Leaning
+
+<img src="readmeimages/batch_learning.png" alt="batch_learning" width="60%">
 
 # TF IDF
 
