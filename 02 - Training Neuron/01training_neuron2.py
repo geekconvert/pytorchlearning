@@ -21,6 +21,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.0001)
 # Sometimes Nan can come. Not a number(NaN) means that there's a numerical problem in our calculations. Um, maybe, for example, we once tried to divide by zero or something like this, and then everything from then on will be not a number or we exceeded the, the number range that can be stored. And then it's also not a number. So it just means that there's a numerical problem here. Usually this happens because the learning rate is too great and then the gradients might actually collapse to zero. And then we end up dividing by that can cause issue or get too large and um, then also we end up at not a number.So we will just reduce the learning rate.
 
 # If you are wondering why does it take so long and it's it's just such a simple formula. Well, it is, but the data that we are training it here is, um, with quite large numbers. Neural networks train best if the numbers for the For the input and the output are between the range. For example minus two and plus two or something like this. And this makes it very, very difficult for the neural network to capture this data or for the neuron here.
+# in 10000 iterations, model was still learning so we first tried to increase it to 50000 and then to 100000. So basically we used here: We just decreased the learning rate and increase the number of training passes here.
 for i in range(0, 100000):
     # Training pass
     optimizer.zero_grad()
