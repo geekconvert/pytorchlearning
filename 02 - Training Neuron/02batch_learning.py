@@ -35,6 +35,7 @@ for i in range(0, 150000):
 
 print("----")
 
+# And you can see here 37.5°C is roughly about 100°F. And all of this has now been learned from our example data. And this now really shows, um, how amazing this technology now already is. Because this parameters(weight and bias) here, um, had to be learned from just the data. And the best thing is that this would now also scale, for example, to different types of data.
 measurements = torch.tensor([
     [37.5]
 ], dtype=torch.float32)
