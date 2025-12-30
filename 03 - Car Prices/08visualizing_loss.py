@@ -39,6 +39,7 @@ y = (y - y_mean) / y_std
 
 model = nn.Linear(2, 1)
 loss_fn = torch.nn.MSELoss()
+# try this for 0.1, 0.5, 1, 0.0001. Lesser the learning rate, more the epochs(250) needed
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 losses = []
