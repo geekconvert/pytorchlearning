@@ -49,7 +49,7 @@ for i in range(0, 1000):
     loss.backward()
     optimizer.step()
 
-    # print(loss)
+    print(loss)
     #if i % 100 == 0: 
     #    print(model.bias)
     #    print(model.weight)

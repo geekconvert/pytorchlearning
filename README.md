@@ -112,7 +112,7 @@
 
 <img src="readmeimages/batch_learning.png" alt="batch_learning" width="60%">
 
-# Normalizing
+# Normalizing output
 
 - let's say an old car would be worth $5,000, whereas a new car might be worth, let's say, $80,000. And this is a very, very large change. And of course, the model or the neuron needs to account for that by adjusting the weights appropriately. But if there are large changes that need to be made then the differences there are very big. And this made learning unstable. The result was that we experienced either when the learning rate was sufficiently small, almost no learning, or we experienced an explosion of the gradients.
 
@@ -128,9 +128,13 @@
 
 - And this will make it significantly easier for our neuron to learn everything.
 
-<img src="readmeimages/normalizing_1.png" alt="normalizing" width="60%">
+<img src="readmeimages/normalizing_1.png" alt="normalizing_output" width="60%">
 
-<img src="readmeimages/normalizing_2.png" alt="normalizing" width="60%">
+<img src="readmeimages/normalizing_2.png" alt="normalizing_output" width="60%">
+
+# Normalizing input
+
+<img src="readmeimages/normalizing_input.png" alt="normalizing_input" width="60%">
 
 # TF IDF
 
