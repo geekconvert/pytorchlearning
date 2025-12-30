@@ -112,6 +112,26 @@
 
 <img src="readmeimages/batch_learning.png" alt="batch_learning" width="60%">
 
+# Normalizing
+
+- let's say an old car would be worth $5,000, whereas a new car might be worth, let's say, $80,000. And this is a very, very large change. And of course, the model or the neuron needs to account for that by adjusting the weights appropriately. But if there are large changes that need to be made then the differences there are very big. And this made learning unstable. The result was that we experienced either when the learning rate was sufficiently small, almost no learning, or we experienced an explosion of the gradients.
+
+- This means that we had a high difference between the predicted value and the actual value. So we had a large difference there. The loss function was mean squared error. So we would then calculate the difference between them and then square it. So this difference then got even larger.
+
+- And these large gradients caused drastic weight updates that we could only account for by reducing the learning rate to almost nothing. Um, and only then we were able to at least come a little bit closer to, or at least be able to train it a little bit without it exploding.
+
+- if we would normalize this data, this would help the neuron to better grasp the data, to better fit the data, because it would stabilize learning. It would put the predictions into a smaller range. Let's say, for example, pretty much the whole data was between the range minus two and plus two. And then the changes that would need to be done would be relatively small, or the predictions would fit into this smaller range, and this then results in smaller and more controlled gradients. Meaning we can work with a more appropriate learning rate and we can then actually make proper predictions. This overall would then lead to smoother weight updates and a more stable learning process.
+
+- z score normalization: The first step is that we want to center the data around zero. Meaning mean of the data would be zero.
+
+- And then the second step is that we just divide all the entries by the standard deviation. The standard deviation is a measurement on how far spread out the data is. The more spread out the data is, the higher the standard deviation. And then everything is back into a normal range. And then most of the data should usually be between -2 and 2. There might still be some outliers, but overall the data should then be in this form.
+
+- And this will make it significantly easier for our neuron to learn everything.
+
+<img src="readmeimages/normalizing_1.png" alt="normalizing" width="60%">
+
+<img src="readmeimages/normalizing_2.png" alt="normalizing" width="60%">
+
 # TF IDF
 
 - Term frequency : This term frequency would look at a single message. And the more often a word occurs there, the higher this term frequency is. The more words we have in that document, the more we are dividing it by. So this term frequency is kind of like normalizing that so that if, for example, we have a short message, each of the words there have a higher weight, whereas if we, for example, have a longer message, then each of the terms has a lower weight, because then we have more terms in that document that we are dividing by. So this is the term frequency.

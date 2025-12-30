@@ -37,6 +37,9 @@ X = torch.column_stack([
     torch.tensor(milage, dtype=torch.float32)
 ])
 # print("X: ", X)
+
+# putting -1 will just mean that we want this to be picked up automatically. the second dimension, meaning columns is set to 1 meaning We want to have one column, and the number of rows is up to the PyTorch to decide.
+#y = torch.tensor(price, dtype=torch.float32).reshape(4009, 1)
 y = torch.tensor(price, dtype=torch.float32).reshape(-1, 1)
 # print("y: ", y)
 
