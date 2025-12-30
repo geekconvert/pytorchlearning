@@ -134,7 +134,17 @@
 
 # Normalizing input
 
+- the weights for parameter age have a more reduced effect on the output, because this parameter age is usually in the range between, let's say one year and 20 years. However, the weights for the parameter miles, they have an amplified effect because the number of miles driven varies between 1000 and 300,000. just a minor change to miles has a significant effect on the output. Just because on average the miles here are extremely high.
+
+- we need to be extremely careful here when adjusting the miles, because small changes here have a major influence, but we need to be a little bit less careful when we are adjusting this weight for age, because a small change will also just have a relatively small change on the output.
+
+- And this is a little bit difficult for the neuron, because we would then need different learning rates. For both of these parameters. And the best solution here is that we just normalize the input data and then we achieve that everything is on the same scale. And then we can just use a normal learning rate for both of these parameters.
+
 <img src="readmeimages/normalizing_input.png" alt="normalizing_input" width="60%">
+
+# Learning Rate
+
+<img src="readmeimages/learning_rate.png" alt="learning_rate" width="60%">
 
 # TF IDF
 

@@ -25,6 +25,7 @@ X = torch.column_stack([
     torch.tensor(milage, dtype=torch.float32)
 ])
 
+# because of axis=0 we will get mean and std for each column
 X_mean = X.mean(axis=0)
 X_std = X.std(axis=0)
 X = (X-X_mean)/X_std
