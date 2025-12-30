@@ -36,7 +36,9 @@ X = torch.column_stack([
     torch.tensor(age, dtype=torch.float32), 
     torch.tensor(milage, dtype=torch.float32)
 ])
+# print("X: ", X)
 y = torch.tensor(price, dtype=torch.float32).reshape(-1, 1)
+# print("y: ", y)
 
 model = nn.Linear(2, 1)
 loss_fn = torch.nn.MSELoss()
