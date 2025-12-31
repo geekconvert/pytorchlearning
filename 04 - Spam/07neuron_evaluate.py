@@ -17,7 +17,7 @@ model = nn.Linear(1000, 1)
 loss_fn = torch.nn.BCEWithLogitsLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
 
-for i in range(10000):
+for i in range(25000):
     optimizer.zero_grad()
     outputs = model(X)
     loss = loss_fn(outputs, y)

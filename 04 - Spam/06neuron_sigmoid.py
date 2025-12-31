@@ -20,7 +20,7 @@ model = nn.Linear(1000, 1)
 loss_fn = torch.nn.BCEWithLogitsLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.02)
 
-for i in range(0, 20000):
+for i in range(0, 30000):
     # Training pass
     optimizer.zero_grad()
     outputs = model(X)
@@ -36,7 +36,7 @@ model.eval()
 with torch.no_grad():
     # when we are making a prediction here we need to apply the sigmoid function to it.
     y_pred = nn.functional.sigmoid(model(X))
-    print(y_pred)
+    print("y_pred: ", y_pred)
     print(y_pred.min())
     print(y_pred.max())
 
