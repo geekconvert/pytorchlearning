@@ -20,6 +20,7 @@ X_data = torch.tensor([
     [5, 20000]
 ], dtype=torch.float32)
 
+# this means no gradients will be tracked here.
 with torch.no_grad():
     prediction = model((X_data - X_mean) / X_std)
     print(prediction * y_std + y_mean)

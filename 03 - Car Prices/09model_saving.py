@@ -30,6 +30,8 @@ X = torch.column_stack([
 ])
 X_mean = X.mean(axis=0)
 X_std = X.std(axis=0)
+
+# And best practice is that we just store it with the file extension ".pt" for PyTorch tensor.
 torch.save(X_mean, "./model/X_mean.pt")
 torch.save(X_std, "./model/X_std.pt")
 X = (X - X_mean) / X_std
@@ -59,4 +61,6 @@ for i in range(0, 2500):
     #if i % 100 == 0: 
     #    print(loss)
 
+
+# this will give us all the parameters here as a dictionary. All the weights and biases.
 torch.save(model.state_dict(), "./model/model.pt")
