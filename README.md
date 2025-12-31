@@ -158,7 +158,7 @@
 
 <img src="readmeimages/tf_idf.png" alt="TF-IDF visualization" width="60%">
 
-# Sigmoid function
+# Activation function: Sigmoid function
 
 - function that can just map linear output to the range of 0 to 1.
 

@@ -12,7 +12,9 @@ df.drop("type", axis=1, inplace=True)
 cv= CountVectorizer(max_features=1000)
 messages = cv.fit_transform(df['message'])
 
+# if this one is slow or you are running into memory issues, just try to reduce the maximum number of features, for example by a factor of ten.
 X = torch.tensor(messages.todense(), dtype=torch.float32)
+# y = torch.tensor(df["spam"], dtype=torch.float32) will work but while training neuron we convert it from 5572 rows to 5572 x 1 matrix
 y = torch.tensor(df["spam"], dtype=torch.float32).reshape((-1, 1))
 
 print(X)
