@@ -166,9 +166,17 @@
 
 # Using sigmoid and BCEWithLogitsLoss
 
+- we got a little bit of a challenge there when we are using the MSE loss with signmoid. The problem is that the error there is just too small. And then the gradients become small as well. And then the neuron struggles to learn efficiently.
+
+- we need a different loss function, so that we can actually learn the output of a neuron with a sigmoid function applied to it.
+
 - Using we got a little bit of a challenge there when we are using the MSE loss. The problem is that the error there is just too small. And then the gradients become small as well. And then the neuron struggles to learn efficiently.
+
 - So yes, we apply the sigmoid function to the output of the neuron. But then when it comes to the loss, we use this BCE loss (binary cross entropy loss) to kind of like undo a little bit of the effects of the sigmoid function. And then we still have this pulling force when it comes to the loss function.
+
 - So we are applying the sigmoid so that we get probabilities to the neuron. And then with the BCE loss function, we are then kind of like undoing a little bit there so that we can still train properly,
+
+- Instead of first calculating the output and then throwing it into the sigmoid function and then applying the loss function on it, what we are going to do is that we are just going to change the loss function. And this will already apply sigmoid for us, because these mathematical calculations are going to cancel each other out and then everything is more easy or more stable to calculate. However, we need to be aware that once we are making a prediction, we need to apply sigmoid manually.
 
 <img src="readmeimages/using_sigmoid.png" alt="sigmoid function" width="60%">
 
