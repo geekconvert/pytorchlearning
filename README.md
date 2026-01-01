@@ -290,6 +290,26 @@
 
 <img src="readmeimages/non_linear_activation_function.png" alt="Non linear activation functions" width="60%">
 
+# Linearity Problem
+
+- So you can see here if we just have a linear neuron here, um, we are not gaining anything. We are just making everything more complicated. And we could just simplify everything here. Create a weight here that combines the two weights from before together. And this could then be used to make our prediction. So this is the problem of linearity and why we need to break it.
+
+<img src="readmeimages/how_not_to_do_it.png" alt="how_not_to_do_it" width="60%">
+
+- So let's just put the sigmoid function or activation function around the output of the hidden layer. Suddenly we can't simplify the formula anymore. And this is now great because this now means that now our network can grasp non-linear concepts.
+
+- If we double the weight w1 then our output here will increase but not double as sigmoid is being applied
+
+- If we double the weight w2 here, then suddenly our output here would completely double.
+
+- So you can see here how now here these two weights here that we are training or that we will train are now doing something completely different. And this means that now here our network can grasp non-linear concepts.
+
+<img src="readmeimages/the_solution.png" alt="the_solution" width="60%">
+
+- In general, to break this linearity, it's only important that we use these activation functions for our hidden layers for the things between the input and the output layer.
+
+- If we want to predict for example a yes no value, let's say spam or not spam, then of course we would also need to apply a sigmoid function here to the output to turn this into probabilities between 0 and 1 However, if we wanted to predict, for example, um, a continuous number, um, in that case we would not apply any um activation function here, or use a loss that has this activation function already on it.
+
 # BackPropagation
 
 <img src="readmeimages/backpropagation.png" alt="BackPropagation" width="60%">
