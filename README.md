@@ -216,10 +216,31 @@
 
 <img src="readmeimages/training_validation_test.png" alt="evaluating model" width="60%">
 
+# LLM working
+
+- the first step is that the text that we want to give to the LM is being tokenized. That means that it's not split into individual words, But each of the messages are being split into shorter tokens that are just a part of a word. This highly depends on the LLM that we want to use, but this is in general how it works.
+
+- The next step is that the LLM is being trained. The LLM tries to predict the next token, and for this it must develop an internal representation of the input text, because otherwise it could not predict the next token.
+
+- And based on the internal representation, it turns out that the LLM is then quite good at predicting the next token.
+
+<img src="readmeimages/using_an_llm.png" alt="using_an_llm" width="60%">
+
+- an LLM consists out of many layers and they are attached to each other. So we got input. And then this input goes through many layers. And then eventually we come or we end up at the end where we then get the representation of the next token that is being predicted.
+
+- one layer here would consist out of many neurons. They are all doing a similar thing but calculating different um, or they all have different weights. But aside from that they are usually the same. And then we would have many of these stacks one after another.
+
 # idea Embeddings
 
+- The idea is that we just take an existing pre-trained LM, and then we take the internal representation of the input inside the LM.
+
 - And then the question would be, can't we just use this then to enhance or to run our spam filter. And it turns out that if we do so, then our spam filter will suddenly work extremely well because we are then no longer training it on individual words, but on the meaning of the text.
+
 - And then suddenly also completely unknown things that, for example, just nowadays would be used inside emails could be captured as spam.
+
+- This internal representation must have captured the meaning of the text in a numerical way.
+
+- We can use this then to enhance or to run our spam filter on that. And it turns out that if we do so, then our spam filter will suddenly work extremely well because we are then no longer training it on individual words, but on the meaning of the text. And then suddenly also completely unknown things that, for example, just nowadays would be used inside emails could be captured as spam.
 
 <img src="readmeimages/idea_embeddings.png" alt="Idea embeddings" width="60%">
 
