@@ -290,6 +290,14 @@
 
 <img src="readmeimages/non_linear_activation_function.png" alt="Non linear activation functions" width="60%">
 
+<img src="readmeimages/linearity_problem_1.png" alt="Linearity problem" width="60%">
+
+<img src="readmeimages/linearity_problem_2.png" alt="Linearity problem" width="60%">
+
+<img src="readmeimages/linearity_problem_3.png" alt="Linearity problem" width="60%">
+
+<img src="readmeimages/linearity_problem_4.png" alt="Linearity problem" width="60%">
+
 # Linearity Problem
 
 - So you can see here if we just have a linear neuron here, um, we are not gaining anything. We are just making everything more complicated. And we could just simplify everything here. Create a weight here that combines the two weights from before together. And this could then be used to make our prediction. So this is the problem of linearity and why we need to break it.
