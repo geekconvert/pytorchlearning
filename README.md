@@ -290,9 +290,10 @@
 
 <img src="readmeimages/non_linear_activation_function.png" alt="Non linear activation functions" width="60%">
 
-<img src="readmeimages/linearity_problem_1.png" alt="Linearity problem" width="60%">
-
-<img src="readmeimages/linearity_problem_2.png" alt="Linearity problem" width="60%">
+<div style="display:flex; gap:10px;">
+  <img src="readmeimages/linearity_problem_1.png" alt="Linearity problem" width="50%">
+  <img src="readmeimages/linearity_problem_2.png" alt="Linearity problem" width="50%">
+</div>
 
 <img src="readmeimages/linearity_problem_3.png" alt="Linearity problem" width="60%">
 
