@@ -31,7 +31,7 @@ model = nn.Linear(1000, 1)
 loss_fn = torch.nn.BCEWithLogitsLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
-for i in range(0, 15000):
+for i in range(0, 90000):
     # Training pass
     optimizer.zero_grad()
     outputs = model(X_train)
