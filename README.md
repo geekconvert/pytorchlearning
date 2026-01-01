@@ -276,6 +276,16 @@
 
 - So linearity means that we got limited learning power. And this also means if we would now just have a network here that if the hidden layers are linear, the final output layer would also be just linear.
 
+- If this hidden layer is linear the output will also be linear. So if we just have linear neurons here um and then we add a linear neuron after that the output here will also be linear. So from the types of problems that we can learn, it will just behave like a linear model and not really offer any extra learning power.
+
+- So what we need is some so-called non-linear activations, meaning some formulas that we can put onto these neurons here that just break this linearity.
+
+- So the solution is that we need to add some non-linearity into our network. So we can just add non-linear activation functions. They are kind of like the functions like the sigmoid function that we used before, just that we use them on these neurons in hidden layer. So this will then if we use these functions to break linearity, this will then help the network to learn non-linear patterns, because then the linearity is broken and then the weights can be adjusted accordingly and the weights can adjust the rest. So it's just important that we somehow break the linearity And then suddenly the model is able to capture complex relationships again here.
+
+- Usually any function on these neurons here works as long as it breaks the linearity. And then again, the weights can adjust to the rest usually at least. But of course there are functions that work better or worse.
+
+- And then we would just apply the sigmoid function to it. This breaks linearity. And this is already now sufficient for learning, because a large enough network with sigmoid activations can approximate many other functions. So as long as we have enough neurons here in our hidden layer, we are going to be to be able to learn any mathematical relationship, no matter how complex. It's actually proven mathematically that if we have an unlimited number of neurons here in just a single layer here in a neural network, we would be able to approximate or to approximate any other mathematical function or model that we want.
+
 <img src="readmeimages/linearity_problem.png" alt="Linearity problem" width="60%">
 
 <img src="readmeimages/non_linear_activation_function.png" alt="Non linear activation functions" width="60%">
