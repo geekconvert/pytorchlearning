@@ -14,6 +14,7 @@ bart_model = BartModel.from_pretrained("facebook/bart-base")
 def convert_to_embeddings(messages):
     embeddings_list = []
     for message in tqdm(messages):
+        # Here we just want to pass in a single message, but it needs to be a Python list. So I need to wrap this into square brackets to turn this single message into a list.
         out = tokenizer([message], 
                         padding=True,
                         max_length=512, 
@@ -29,7 +30,13 @@ def convert_to_embeddings(messages):
             )
             embeddings = pred.last_hidden_state.mean(dim=1)\
                 .reshape((-1))
+            
+            # print(embeddings.shape)
+            # print(embeddings)
+
             embeddings_list.append(embeddings)
     return torch.stack(embeddings_list)
+
+
 X = convert_to_embeddings(messages)
 print(X.shape)

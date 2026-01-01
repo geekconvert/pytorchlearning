@@ -27,7 +27,7 @@ out = tokenizer(messages,
                     truncation=True, 
                     return_tensors="pt")
 
-print(out)
+print("out: ", out)
 
 # So I can use a model that is provided by Facebook. And this already implements or this will now fetch the weights and everything that is needed for all the different layers, so that I can just use this model.
 bart_model = BartModel.from_pretrained("facebook/bart-base")
@@ -41,10 +41,13 @@ with torch.no_grad():
         input_ids=out["input_ids"], 
         attention_mask=out["attention_mask"]
     )
+    # We got 16 in the next dimension, and then and then 768 in the last dimension. Well, our LLM it only predicted one token at a time, and it had to run, 16 times, because here the longest number of tokens had been 16. So this is why we are getting the individual activations there for each of these 16 steps. 768 is the number of output values that we got there. so in each step we have 768, uh, numerical values that represent the meaning of that.
     # pred.last_hidden_state had shape torch.Size([4, , 16 , 768]) but with pred.last_hidden_state.mean(dim=1) it is torch.Size([4, 768])
     # Where did these 16 entries for each of the messages um, go to? Well, we took the average there, um, so that everything is now a simple two dimensional structure.
     embeddings = pred.last_hidden_state.mean(dim=1)
     print(embeddings.shape)
+
+    # first row give all columns
     print(embeddings[0, :])
 
 # from transformers import BartTokenizer, BartModel
