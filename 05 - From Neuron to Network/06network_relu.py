@@ -26,6 +26,7 @@ for i in range(0, 600000):
 model.eval()
 with torch.no_grad():
     outputs = model(X)
+    #for prediction, we need to apply the sigmoid function to the output of the model
     y_pred = nn.functional.sigmoid(outputs) > 0.5
     y_pred_correct = y_pred.type(torch.float32) == y
     print(y_pred_correct.type(torch.float32).mean())
