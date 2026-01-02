@@ -322,6 +322,16 @@
 
 # BackPropagation
 
+- So let's in general let's just explore how our network learns. So the first step is called forward propagation. And that means that we initialized or the first time we launch it, everything is initialized randomly. And we then apply the model to the data to make a prediction. So there we are getting then our Y with a hat on top. And this we can then use in combination with our loss function to calculate how much these weights here need to be changed.
+
+- So there we are getting then our Y with a hat on top. And this we can then use in combination with our loss function to calculate how much these weights(between hidden layer and output neuron) here need to be changed.
+
+- we just calculate the error how much error in general we got. And then this error we then want to map to these weights that we got here. And this step is called back propagation. So we got an output error. And then we compute the gradients to propagate the error backwards to determine how much each neuron influences the error.
+
+- And this neuron here has a higher influence on the output error. So we multiply the output error here with this weight. And then we have an error right here that we can then use to have these weights that lead to this neuron here to influence them. So then we can adjust the weights here.
+
+- So the larger the weights here the larger the contribution from this neuron here. And the more we are going to adjust the weights that lead to this neuron here of the previous layer.
+
 <img src="readmeimages/backpropagation.png" alt="BackPropagation" width="60%">
 
 - Math behind BackPropagation
