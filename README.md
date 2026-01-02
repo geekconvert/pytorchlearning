@@ -395,3 +395,7 @@
 # Mini Batch Learning
 
 <img src="readmeimages/mini_batch_learning.png" alt="mini_batch_learning" width="60%">
+
+# Classify Handwritten digits
+
+<img src="readmeimages/classify_handwritten_digits.png" alt="classify_handwritten_digits" width="60%">
