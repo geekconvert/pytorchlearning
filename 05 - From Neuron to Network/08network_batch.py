@@ -15,7 +15,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
 num_entries = X.size(0)
 batch_size = 32
 
-for i in range(0, 10000):
+for i in range(0, 15000):
     for start in range(0, num_entries, batch_size):
         end = min(num_entries, start+ batch_size)
         X_data = X[start:end]
