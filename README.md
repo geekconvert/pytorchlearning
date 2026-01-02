@@ -399,3 +399,15 @@
 # Classify Handwritten digits
 
 <img src="readmeimages/classify_handwritten_digits.png" alt="classify_handwritten_digits" width="60%">
+
+# Multi class prediction
+
+<img src="readmeimages/multi_class_pred_1.png" alt="multi_class_pred" width="60%">
+
+<img src="readmeimages/multi_class_pred_2.png" alt="multi_class_pred" width="60%">
+
+<img src="readmeimages/multi_class_pred_3.png" alt="multi_class_pred" width="60%">
+
+<img src="readmeimages/multi_class_pred_4.png" alt="multi_class_pred" width="60%">
+
+<img src="readmeimages/multi_class_pred_5.png" alt="multi_class_pred" width="60%">

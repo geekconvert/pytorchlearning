@@ -11,36 +11,43 @@ mnist_test = datasets.MNIST(root='./data', download=True, train=False, transform
 train_dataloader = DataLoader(mnist_train, batch_size=32, shuffle=True)
 test_dataloader = DataLoader(mnist_test, batch_size=32, shuffle=True)
 
-model = nn.Sequential(
-    nn.Linear(784, 100),
-    nn.ReLU(),
-    nn.Linear(100, 1)
-)
-
+model = nn.Sequential(nn.Linear(784, 100), nn.ReLU(), nn.Linear(100, 1))
 loss_fn = torch.nn.BCEWithLogitsLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 for i in range(0, 10):
     loss_sum = 0
     for X, y in train_dataloader:
-        # print("X.shape: ", X.shape)
-        # # -1 meaning first dimension inferred automatically and second dimension we want 784
-        # print("y.shape: ", X.reshape(-1, 784).shape)
-        # print("y.shape: ", (y == 0).type(torch.float32).reshape(-1, 1).shape)
-        X = X.reshape((-1, 784))
+        X = X.reshape(-1, 784)
         y = (y == 0).type(torch.float32).reshape(-1, 1)
-        # print("X.shape: ", X.shape)
-        # print("y.shape: ", y.shape)
 
         optimizer.zero_grad()
         outputs = model(X)
         loss = loss_fn(outputs, y)
         loss.backward()
         optimizer.step()
-
-        loss_sum+=loss.item()
+        loss_sum += loss.item()
 
     print(loss_sum)
+
+
+model.eval()
+with torch.no_grad():
+    accurate = 0
+    total = 0
+    for X, y in test_dataloader:
+        X = X.reshape(-1, 784)
+        y = (y == 0).reshape(-1, 1)
+
+        outputs = nn.functional.sigmoid(model(X))
+        #print(outputs)
+        correct_pred = (outputs > 0.5) == y
+        #print("correct_pred.shape: ", correct_pred.shape)
+        #print("correct_pred.shape: ", correct_pred.shape)
+        total += correct_pred.size(0)
+        accurate += correct_pred.type(torch.int).sum().item()
+
+    print(accurate / total)
 
 
 # import torch
@@ -80,3 +87,18 @@ for i in range(0, 10):
 #         loss_sum+=loss.item()
         
 #     print(loss_sum)
+
+# model.eval()
+# with torch.no_grad():
+#     accurate = 0
+#     total = 0
+#     for X, y in test_dataloader:
+#         X = X.reshape((-1, 784))
+#         y = (y == 0).reshape((-1, 1))
+
+#         outputs = nn.functional.sigmoid(model(X))
+#         correct_pred = ((outputs > 0.5) == y)
+#         total+=correct_pred.size(0)
+
+#         accurate+=correct_pred.type(torch.int).sum().item()
+#     print(accurate / total)
