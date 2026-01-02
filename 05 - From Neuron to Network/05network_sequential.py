@@ -7,13 +7,18 @@ df = pd.read_csv("./data/student_exam_data.csv")
 X = torch.tensor(df[["Study Hours", "Previous Exam Score"]].values, dtype=torch.float32)
 y = torch.tensor(df["Pass/Fail"], dtype=torch.float32).reshape((-1, 1))
 
+
+print("functional.sigmoid: ",nn.functional.sigmoid(torch.tensor(5.5)))
+z = nn.Sigmoid()
+print("nn.Sigmoid: ",z(torch.tensor(5.5)))
+
 model = nn.Sequential(nn.Linear(2, 10), nn.Sigmoid(), nn.Linear(10, 1))
 print("model:", model)
 
 loss_fn = torch.nn.BCEWithLogitsLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.005)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.003)
 
-for i in range(0, 800000):
+for i in range(0, 1000000):
     optimizer.zero_grad()
     outputs = model(X)
     loss = loss_fn(outputs, y)

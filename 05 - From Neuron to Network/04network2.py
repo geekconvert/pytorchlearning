@@ -12,7 +12,7 @@ hidden_model = nn.Linear(2, 10)
 output_model = nn.Linear(10, 1)
 loss_fn = torch.nn.BCEWithLogitsLoss()
 parameters = list(hidden_model.parameters()) + list(output_model.parameters())
-optimizer = torch.optim.SGD(parameters, lr=0.005)
+optimizer = torch.optim.SGD(parameters, lr=0.004)
 
 for i in range(0, 800000):
     optimizer.zero_grad()
