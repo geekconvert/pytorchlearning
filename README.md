@@ -386,6 +386,10 @@
 
 - But there's another approach that's called Adam or adaptive moment estimation.
 
+- So in steep slope areas, with respect to an individual parameter, we would be taking smaller steps compared to a parameter where the slope is not that steep. So we are kind of like fine tuning how individual parameters here are learning and whether they are learning faster or not, depending on the slope.
+
+- Adam also does some other magic with how the learning rate or how things are slightly adjusted for each individual parameter to really allow us to learn the minimum or the data as soon as possible.
+
 <img src="readmeimages/adam_optimizer.png" alt="adam_optimizer" width="60%">
 
 # Mini Batch Learning
