@@ -26,7 +26,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 num_entries = X.size(0)
 batch_size = 32
 
-for i in range(0, 250):
+for i in range(0, 200):
     loss_sum = 0
     for start in range(0, num_entries, batch_size):
         end = min(num_entries, start+ batch_size)
