@@ -411,3 +411,35 @@
 <img src="readmeimages/multi_class_pred_4.png" alt="multi_class_pred" width="60%">
 
 <img src="readmeimages/multi_class_pred_5.png" alt="multi_class_pred" width="60%">
+
+# One hot encoding
+
+<img src="readmeimages/one_hot_encoding.png" alt="one_hot_encoding" width="60%">
+
+# Softmax
+
+- it makes sure that the value is always positive because the output of an exponential function is always between zero and infinity.
+
+- And then by the mathematical formula, sum of all the outputs will equal to exactly to one, because we divided it here by the sum of everything.
+
+- So the softmax is going to guarantee that all the probabilities will add up to exactly one or to 100%
+
+- Well, during training, it's best to just use a loss function that already ships with a built in softmax. So we would need to use torch.nn.CrossEntropyLoss. And when we are making a prediction, we then need to ensure that we apply softmax manually by saying
+
+torch.nn dot functional dot softmax.
+
+<img src="readmeimages/softmax_1.png" alt="softmax" width="60%">
+
+<img src="readmeimages/softmax_2.png" alt="softmax" width="60%">
+
+<img src="readmeimages/softmax_3.png" alt="softmax" width="60%">
+
+# Additional Layer
+
+- More layers or neurons increase the complexity of the model. This means that it may take longer to train, but also it can lead to something that's called overfitting. So be aware, the more layers and neurons our model has, the more likely it is to happen.
+
+<img src="readmeimages/additional_layer_1.png" alt="additional_layer" width="60%">
+
+<img src="readmeimages/additional_layer_2.png" alt="additional_layer" width="60%">
+
+<img src="readmeimages/additional_layer_3.png" alt="additional_layer" width="60%">
