@@ -459,3 +459,17 @@ torch.nn dot functional dot softmax.
 - We will see that a convolutional neural network will work significantly better on images
 
 <img src="readmeimages/convolution_neural_netowork.png" alt="convolution_neural_netowork" width="60%">
+
+# structure of convolution neural network for edge detection
+
+- the idea is or the goal is that we have the model learn to detect edges automatically.
+
+- The approach here is that we provide the model with an image. For example one color channel here in this case grayscale 1 times 28 times 28 pixels. And then we use a CNN layer to apply a filter to it. And the filter of the CNN layer is initially initialized randomly and then also learned automatically because they are then just parameters to this layer. And we can calculate the gradient or the slope in with respect to these parameters. So we can learn them automatically. So the new setup will look as follows.
+
+- We got our input here. In this case it's one color channel times 28 times 28 pixels. Then we want to apply a CNN layer to it. In this case, we are going to be using three filters. So we will have three individual filters that are being learned. So the output shape will be three filters. Then we would just flatten that. This layer here has no parameters here. It just takes this nested structure and writes them one after another into like a more simple vector.
+
+- And then we can just connect a normal hidden layer to it and then an output layer. And then we can use a softmax for the prediction.
+
+<img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
+
+<img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
