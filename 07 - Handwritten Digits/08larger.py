@@ -26,7 +26,7 @@ model = nn.Sequential(
 loss_fn = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
-for i in range(0, 10):
+for i in range(0, 20):
     loss_sum = 0
     for X, y in train_dataloader:
         X = X.reshape((-1, 784))
@@ -41,6 +41,8 @@ for i in range(0, 10):
         loss_sum+=loss.item()
         
     print(loss_sum)
+
+
 
 model.eval()
 with torch.no_grad():

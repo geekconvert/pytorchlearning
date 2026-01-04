@@ -443,3 +443,11 @@ torch.nn dot functional dot softmax.
 <img src="readmeimages/additional_layer_2.png" alt="additional_layer" width="60%">
 
 <img src="readmeimages/additional_layer_3.png" alt="additional_layer" width="60%">
+
+# Solving overfitting
+
+- So if the if we don't have enough training data, it's very easy for the model to fall into the trap of fixating on details that are not relevant for it.
+
+- if lets suppose overfitting only starts after epoch 4, then we only train the model until here, and then we just take a snapshot and the weights there, and we just don't continue training the model. In this case, the model then didn't have time to overfit, and this would then pretty much be the ideal model here. Because technically speaking, the validation loss, is no longer improving.
+
+<img src="readmeimages/solving_overfitting.png" alt="solving_overfitting" width="60%">
