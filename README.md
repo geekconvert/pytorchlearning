@@ -451,3 +451,11 @@ torch.nn dot functional dot softmax.
 - if lets suppose overfitting only starts after epoch 4, then we only train the model until here, and then we just take a snapshot and the weights there, and we just don't continue training the model. In this case, the model then didn't have time to overfit, and this would then pretty much be the ideal model here. Because technically speaking, the validation loss, is no longer improving.
 
 <img src="readmeimages/solving_overfitting.png" alt="solving_overfitting" width="60%">
+
+# Convolution neural network
+
+- It's a specific type of neural network that's optimized for image recognition, the so called convolutional neural networks, that allow us to give the network the intuition to be able to understand that this is structural data, that this is an image, and to also come up with its own edge detection or things like this to further improve the training performance.
+
+- We will see that a convolutional neural network will work significantly better on images
+
+<img src="readmeimages/convolution_neural_netowork.png" alt="convolution_neural_netowork" width="60%">
