@@ -472,4 +472,4 @@ torch.nn dot functional dot softmax.
 
 <img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
 
-<img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
+<img src="readmeimages/structure_cnn_2.png" alt="structure_cnn" width="60%">
