@@ -1,4 +1,3 @@
-import sys
 import torch
 from torch.utils.data import DataLoader
 from torch import nn
@@ -15,11 +14,11 @@ train_dataloader = DataLoader(mnist_train, batch_size=32, shuffle=True)
 test_dataloader = DataLoader(mnist_test, batch_size=32, shuffle=True)
 
 model = nn.Sequential(
-    nn.Conv2d(1, 3, kernel_size=(3, 3), padding=1, padding_mode="reflect"),
+    nn.Conv2d(1, 3, kernel_size=(3,3), padding = 1, padding_mode="reflect"),
     nn.MaxPool2d(kernel_size=2),
     nn.ReLU(),
     nn.Flatten(),
-    nn.Linear(588, 100),
+    nn.Linear(3*14*14, 100),
     nn.ReLU(),
     nn.Linear(100, 10)
 )
@@ -29,9 +28,9 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 for i in range(0, 10):
     model.train()
-    
+
     loss_sum = 0
-    for X, y in train_dataloader:
+    for X,y in train_dataloader:
         y = F.one_hot(y, num_classes=10).type(torch.float32)
 
         optimizer.zero_grad()
@@ -41,15 +40,18 @@ for i in range(0, 10):
         optimizer.step()
 
         loss_sum+=loss.item()
+    
     print(loss_sum)
+
 
 model.eval()
 with torch.no_grad():
     accurate = 0
     total = 0
-    for X, y in test_dataloader:
-        outputs = nn.functional.softmax(model(X), dim=1) 
+    for X,y in test_dataloader:
+        outputs = nn.functional.softmax(model(X), dim=1)
         correct_pred = (y == outputs.max(dim=1).indices)
-        total+=correct_pred.size(0)
-        accurate+=correct_pred.type(torch.int).sum().item()
-    print("Accuracy on validation data:", accurate / total)
+        total += correct_pred.size(0)
+        accurate += correct_pred.type(torch.int).sum().item()
+    
+    print("Accuracy on test data:", accurate / total)

@@ -481,3 +481,23 @@ torch.nn dot functional dot softmax.
 <img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
 
 <img src="readmeimages/structure_cnn_2.png" alt="structure_cnn" width="60%">
+
+# Reducing ccn complexity
+
+- For each of them, a different filter had been learned and had been applied. We kind of had to do this because one filter could let's say, for example, only detect horizontal edges, another maybe diagonal edges. Another one could, for example, detect vertical edges. So that we are able to adapt to different features in the data.
+
+- So if we got 2352 outputs in this hidden layer and here has 100 neurons in flattening layer, then the number of weights here is 235,200 weights. That had to be learned here plus potential bias terms.
+
+- And the solution is that we can reduce the complexity of the network by using a max pooling layer to scale down the data. This reduces the size of the input for the next layer and then making the network simpler to train.
+
+- So let's say we wanted to apply a max pooling 2D. So 2D just stands for two dimensional. There would also be the one dimensional version or the three dimensional version and so on.
+
+- As per image below the maximum of similar color blocks are taken and added to output.
+
+- The parameters of max pooling are the kernel size. In this case the kernel size would be two. That means that the numbers that we are pooling are two times two. And then there would also be the stride parameter. And that just means that okay if we took the maximum from here if we move to the next example, how much do we want to skip here. And usually it's equivalent to the kernel size but it could be different.
+
+- You might now wonder why maximum pooling? Why don't we just take the average or do some other calculations there?
+
+- We could also average everything out. So instead of taking the maximum, we could also take the average here. And that would then be called average pool 2D. So that would be completely valid option as well. However calculating this is more complex. With maximum pooling three out of four paths are being terminated here, in this case meaning fewer paths need to be back propagated. Max pooling has this nice property that it terminates paths that are not relevant enough.
+
+- So now in the new setup we have our CNN layer with three filters. Then we apply a max pooling here. So they're not the number of um intermediate images is reduced but the size there. So instead of 28 times 28 pixels they are suddenly only 14 times 14 pixels in size. Then we flatten them and you can see here suddenly we only now got 588 outputs. Then we have our hidden layer here with 100 neurons. So suddenly here, if we multiply this, it's now three quarters less, so significantly lower number of weights that we have to learn, less chance of overfitting and all of these things.
