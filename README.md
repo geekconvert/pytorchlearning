@@ -501,3 +501,15 @@ torch.nn dot functional dot softmax.
 - We could also average everything out. So instead of taking the maximum, we could also take the average here. And that would then be called average pool 2D. So that would be completely valid option as well. However calculating this is more complex. With maximum pooling three out of four paths are being terminated here, in this case meaning fewer paths need to be back propagated. Max pooling has this nice property that it terminates paths that are not relevant enough.
 
 - So now in the new setup we have our CNN layer with three filters. Then we apply a max pooling here. So they're not the number of um intermediate images is reduced but the size there. So instead of 28 times 28 pixels they are suddenly only 14 times 14 pixels in size. Then we flatten them and you can see here suddenly we only now got 588 outputs. Then we have our hidden layer here with 100 neurons. So suddenly here, if we multiply this, it's now three quarters less, so significantly lower number of weights that we have to learn, less chance of overfitting and all of these things.
+
+# Running pytorch on a GPU
+
+- GPUs are optimized for parallel operations such as vector or matrix calculations, and a neural network happens to use exactly these kinds of operations. So a GPU is optimized or enables us to more efficiently train a deep learning model.
+
+- PyTorch supports different backends to perform calculation like cuda, mps etc
+
+# Running calculations on different devices
+
+- We need to do this manually because this gives us more control over the GPU's memory. This allows us to ensure that we don't run into memory limits. So if this were to happen automatically and we would then create a tensor with lots of data in it, we might try to push so much data into the GPU that things there will break or are not going to work properly. And by doing this manually, this gives us a lot of control here.
+
+- When MPS it will be back, the memory can be used by other programs once Python has did the cleanup there. But when using Cuda, when you are allocating GPU memory and you are deleting, for example, this tensor, then um, this data will be removed from the GPU, but this part of the memory will still be allocated to your program.
