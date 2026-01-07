@@ -481,3 +481,69 @@ torch.nn dot functional dot softmax.
 <img src="readmeimages/structure_cnn_1.png" alt="structure_cnn" width="60%">
 
 <img src="readmeimages/structure_cnn_2.png" alt="structure_cnn" width="60%">
+
+# Reducing ccn complexity
+
+- For each of them, a different filter had been learned and had been applied. We kind of had to do this because one filter could let's say, for example, only detect horizontal edges, another maybe diagonal edges. Another one could, for example, detect vertical edges. So that we are able to adapt to different features in the data.
+
+- So if we got 2352 outputs in this hidden layer and here has 100 neurons in flattening layer, then the number of weights here is 235,200 weights. That had to be learned here plus potential bias terms.
+
+- And the solution is that we can reduce the complexity of the network by using a max pooling layer to scale down the data. This reduces the size of the input for the next layer and then making the network simpler to train.
+
+- So let's say we wanted to apply a max pooling 2D. So 2D just stands for two dimensional. There would also be the one dimensional version or the three dimensional version and so on.
+
+- As per image below the maximum of similar color blocks are taken and added to output.
+
+- The parameters of max pooling are the kernel size. In this case the kernel size would be two. That means that the numbers that we are pooling are two times two. And then there would also be the stride parameter. And that just means that okay if we took the maximum from here if we move to the next example, how much do we want to skip here. And usually it's equivalent to the kernel size but it could be different.
+
+- You might now wonder why maximum pooling? Why don't we just take the average or do some other calculations there?
+
+- We could also average everything out. So instead of taking the maximum, we could also take the average here. And that would then be called average pool 2D. So that would be completely valid option as well. However calculating this is more complex. With maximum pooling three out of four paths are being terminated here, in this case meaning fewer paths need to be back propagated. Max pooling has this nice property that it terminates paths that are not relevant enough.
+
+- So now in the new setup we have our CNN layer with three filters. Then we apply a max pooling here. So they're not the number of um intermediate images is reduced but the size there. So instead of 28 times 28 pixels they are suddenly only 14 times 14 pixels in size. Then we flatten them and you can see here suddenly we only now got 588 outputs. Then we have our hidden layer here with 100 neurons. So suddenly here, if we multiply this, it's now three quarters less, so significantly lower number of weights that we have to learn, less chance of overfitting and all of these things.
+
+<img src="readmeimages/cnn_complexity_1.png" alt="cnn_complexity" width="60%">
+
+<img src="readmeimages/cnn_complexity_2.png" alt="cnn_complexity" width="60%">
+
+# Running pytorch on a GPU
+
+- GPUs are optimized for parallel operations such as vector or matrix calculations, and a neural network happens to use exactly these kinds of operations. So a GPU is optimized or enables us to more efficiently train a deep learning model.
+
+- PyTorch supports different backends to perform calculation like cuda, mps etc
+
+<img src="readmeimages/pytorch_on_gpu.png" alt="pytorch_on_gpu" width="60%">
+
+# Running calculations on different devices
+
+- We need to do this manually because this gives us more control over the GPU's memory. This allows us to ensure that we don't run into memory limits. So if this were to happen automatically and we would then create a tensor with lots of data in it, we might try to push so much data into the GPU that things there will break or are not going to work properly. And by doing this manually, this gives us a lot of control here.
+
+- When MPS it will be back, the memory can be used by other programs once Python has did the cleanup there. But when using Cuda, when you are allocating GPU memory and you are deleting, for example, this tensor, then um, this data will be removed from the GPU, but this part of the memory will still be allocated to your program.
+
+<img src="readmeimages/calculations_on_different_devices.png" alt="calculations_on_different_devices" width="60%">
+
+# Stacking multiple CNN layers
+
+- we had a CNN layer, it was clear that this CNN layer would, for example, focus on edges, because this is what the Sobel operator, the mathematical operator, that is the general idea behind the CNN layer, is able to detect.
+
+- then to just add another CNN layer on top of that. Here you can imagine it a bit like this, that from a mathematical perspective, we are doing the same as in the first CNN layer, in the sense that we are going to apply the convolutional filter. But what we are now going to detect, for example, would be maybe a curves or Maybe an edge and then the opposite edge or things like this. So these would then be features that the neural network would be able to learn here.
+
+<img src="readmeimages/stacking_multiple_cnns.png" alt="stacking_multiple_cnns" width="60%">
+
+# Dropout
+
+- dropout helps us to not fixate too much on an individual input or on the opinion or whatever of the neuron of the previous layer.
+
+- And it turns out that by doing this, it helps us preventing overfitting, which means that we can utilize a more complex architecture like we got here.And we can then reduce the overfitting, which would then help the model to generalize better to unseen data.
+
+<img src="readmeimages/dropout_1.png" alt="dropout" width="60%">
+
+<img src="readmeimages/dropout_2.png" alt="dropout" width="60%">
+
+# Batch Normalization
+
+<img src="readmeimages/batch_normalization_1.png" alt="batch_normalization" width="60%">
+
+<img src="readmeimages/batch_normalization_2.png" alt="batch_normalization" width="60%">
+
+<img src="readmeimages/batch_normalization_3.png" alt="batch_normalization" width="60%">
