@@ -460,6 +460,14 @@ torch.nn dot functional dot softmax.
 
 <img src="readmeimages/convolution_neural_netowork.png" alt="convolution_neural_netowork" width="60%">
 
+# Edge detection - sobel operator
+
+- And here this multiplication symbol, it's not a multiplication. It stands for the two dimensional convolution operation.
+
+- the filters that we are going to use, we are not going to come up with them ourselves. That would be too much effort and to complicate it, and it turns out that a neural network can actually learn the filter.
+
+<img src="readmeimages/sobel_operator.png" alt="sobel_operator" width="60%">
+
 # structure of convolution neural network for edge detection
 
 - the idea is or the goal is that we have the model learn to detect edges automatically.
