@@ -521,3 +521,11 @@ torch.nn dot functional dot softmax.
 - When MPS it will be back, the memory can be used by other programs once Python has did the cleanup there. But when using Cuda, when you are allocating GPU memory and you are deleting, for example, this tensor, then um, this data will be removed from the GPU, but this part of the memory will still be allocated to your program.
 
 <img src="readmeimages/calculations_on_different_devices.png" alt="calculations_on_different_devices" width="60%">
+
+# Stacking multiple CNN layers
+
+- we had a CNN layer, it was clear that this CNN layer would, for example, focus on edges, because this is what the Sobel operator, the mathematical operator, that is the general idea behind the CNN layer, is able to detect.
+
+- then to just add another CNN layer on top of that. Here you can imagine it a bit like this, that from a mathematical perspective, we are doing the same as in the first CNN layer, in the sense that we are going to apply the convolutional filter. But what we are now going to detect, for example, would be maybe a curves or Maybe an edge and then the opposite edge or things like this. So these would then be features that the neural network would be able to learn here.
+
+<img src="readmeimages/stacking_multiple_cnns.png" alt="stacking_multiple_cnns" width="60%">
