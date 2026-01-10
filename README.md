@@ -529,3 +529,21 @@ torch.nn dot functional dot softmax.
 - then to just add another CNN layer on top of that. Here you can imagine it a bit like this, that from a mathematical perspective, we are doing the same as in the first CNN layer, in the sense that we are going to apply the convolutional filter. But what we are now going to detect, for example, would be maybe a curves or Maybe an edge and then the opposite edge or things like this. So these would then be features that the neural network would be able to learn here.
 
 <img src="readmeimages/stacking_multiple_cnns.png" alt="stacking_multiple_cnns" width="60%">
+
+# Dropout
+
+- dropout helps us to not fixate too much on an individual input or on the opinion or whatever of the neuron of the previous layer.
+
+- And it turns out that by doing this, it helps us preventing overfitting, which means that we can utilize a more complex architecture like we got here.And we can then reduce the overfitting, which would then help the model to generalize better to unseen data.
+
+<img src="readmeimages/dropout_1.png" alt="dropout" width="60%">
+
+<img src="readmeimages/dropout_2.png" alt="dropout" width="60%">
+
+# Batch Normalization
+
+<img src="readmeimages/batch_normalization_1.png" alt="batch_normalization" width="60%">
+
+<img src="readmeimages/batch_normalization_2.png" alt="batch_normalization" width="60%">
+
+<img src="readmeimages/batch_normalization_3.png" alt="batch_normalization" width="60%">
