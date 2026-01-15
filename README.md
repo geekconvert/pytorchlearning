@@ -547,3 +547,7 @@ torch.nn dot functional dot softmax.
 <img src="readmeimages/batch_normalization_2.png" alt="batch_normalization" width="60%">
 
 <img src="readmeimages/batch_normalization_3.png" alt="batch_normalization" width="60%">
+
+# Generating additional data
+
+<img src="readmeimages/generate_additonal_data.png" alt="generate_additonal_data" width="60%">
