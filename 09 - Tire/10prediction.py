@@ -106,6 +106,6 @@ tire_tensor = tire_tensor.to(device)
 #     pass
 
 with torch.no_grad():
-    y_pred = torch.sigmoid(model(tire_tensor))
+    y_pred = torch.sigmoid(model(tire_tensor)) # class 0 defective and good is 1 which we can check from 08 file
     print(y_pred)
     pass
