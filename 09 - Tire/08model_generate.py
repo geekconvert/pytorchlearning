@@ -197,6 +197,7 @@ loss_fn = nn.BCEWithLogitsLoss()
 
 
 # execution or training may take even a little bit longer because now here of course all of these image operations here will have to be performed. And this will take additional processing pipeline steps or CPU cycles.
+# And already after epoch, the first epoch, we are at a validation accuracy of 91%. And then at the end we end up at a validation accuracy of about 96%. By the way, you can see here now also that the validation loss is fluctuating a bit more. The reason is that also for the validation data, the training or sorry the pre-processing pipeline is being applied. So also there we have random rotations, random vertical flips and so on. They are, of course, just adding additional noise there.
 for epoch in range(15):
     print(f"--- EPOCH: {epoch} ---")
     model.train()
@@ -214,7 +215,7 @@ for epoch in range(15):
         optimizer.zero_grad()
         loss = loss_fn(outputs, y)
         loss_sum+=loss.item()
-        loss.backward=()
+        loss.backward()
         optimizer.step()
 
         predictions = torch.sigmoid(outputs) > 0.5
